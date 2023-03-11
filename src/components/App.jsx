@@ -1,6 +1,6 @@
 import Home from "./home/Home";
 import axios from "axios";
-import { useState } from "react";
+import {useState,useEffect } from "react";
 
 
 export const App = () => {
@@ -11,41 +11,41 @@ const BASEURL = `https://api.themoviedb.org/3/trending/movie/day?`;
 // const STORAGE_KEY = 'genresId';
 // const IMGURL = `https://image.tmdb.org/t/p/w500/${data.poster_path}`;
 
-    
-    const [data, setData] = useState(() => {fetchMovieRating()})
-    const [genres, setGenres] = useState(()=> {fetchGenresId()})
 
-    
-    async function fetchMovieRating() {
-    try {
-        const response = await axios.get(`${BASEURL}api_key=${KEY}`)
-        const result = await response.data.results;
-        setData(result)
-    } catch (error) {
-      console.log(error);
-    }
-  }
-   
-     async function fetchGenresId() {
-   const BASEURLGENRES = `https://api.themoviedb.org/3/genre/movie/list?`;
-    try {
-        const resultGenresId = await axios.get(`${BASEURLGENRES}api_key=${KEY}&language=en-US`);
-        setGenres(resultGenresId.data.genres)
-    } catch (error) {
-      console.log(error);
-    }
-  }
+const [data, setData] = useState(null)
+const [genres, setGenres] = useState(null)
 
+console.log(data)  
+
+async function fetchMovieRating() {
+  try {
+    const response = await axios.get(`${BASEURL}api_key=${KEY}`)
+    setData(response.data.results)
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function fetchGenresId() {
+  const BASEURLGENRES = `https://api.themoviedb.org/3/genre/movie/list?`;
+  try {
+    const resultGenresId = await axios.get(`${BASEURLGENRES}api_key=${KEY}&language=en-US`);
+    setGenres(resultGenresId.data.genres)
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+useEffect(() => {
+  fetchMovieRating();
+  fetchGenresId();
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, [])
 
 
   return (
     <div>
-              <header>
-            <nav>    
-              {data !== null &&  <Home data={data} genres = {genres}> <a href="/">Home</a></Home>}
-                <a href="/Movies">Movies</a>
-            </nav>
-        </header>
-    </div>
+    { data !== null && <Home data={data} genres={genres}><a href="/">Home</a></Home>}
+       </div>
   );
 };
