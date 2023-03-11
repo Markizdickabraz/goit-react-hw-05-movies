@@ -1,6 +1,9 @@
 import Home from "./home/Home";
 import axios from "axios";
-import {useState,useEffect } from "react";
+import { useState, useEffect } from "react";
+import GlobalStyle from './globalStyled'
+import { HeaderStyled, LinkStyled, NavStyled } from "./headerStyled";
+
 
 
 export const App = () => {
@@ -45,7 +48,14 @@ useEffect(() => {
 
   return (
     <div>
-    { data !== null && <Home data={data} genres={genres}><a href="/">Home</a></Home>}
+      <GlobalStyle />
+      <HeaderStyled>
+        <NavStyled>
+          <LinkStyled href="/">Home</LinkStyled>
+          <LinkStyled href="/Movies">Movies</LinkStyled>
+        </NavStyled>
+      </HeaderStyled>
+    {data !== null && <Home data={data} genres={genres}></Home>}
        </div>
   );
 };
