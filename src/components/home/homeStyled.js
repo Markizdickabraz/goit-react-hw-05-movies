@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {Link } from "react-router-dom";
+
 
 export const HomeStyled = styled.ul`
 padding: 25px;
@@ -16,4 +18,13 @@ flex-direction: column;
 
 export const ImgStyled = styled.img`
 width:100%;
+`
+
+export const LinkStyled = styled(Link)`
+text-decoration: none;
+display:block;
+color:black;
+    :hover {
+        color:lightblue;
+    }
 `

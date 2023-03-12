@@ -4,7 +4,8 @@ import { HeaderStyled, Link, NavStyled } from "./headerStyled";
 import GlobalStyle from './globalStyled'
 import axios from "axios";
 import Home from "./home/Home";
-import Movies from "./movies/movies";
+import Movies from "./movies/Movies";
+import MovieDetails from "./movieDetails/MovieDetails";
 
 export const App = () => {
 
@@ -17,8 +18,6 @@ const BASEURL = `https://api.themoviedb.org/3/trending/movie/day?`;
 
 const [data, setData] = useState(null)
   // const [genres, setGenres] = useState(null)
-
-console.log(data)  
 
 async function fetchMovieRating() {
   try {
@@ -52,12 +51,13 @@ useEffect(() => {
       <HeaderStyled>
         <NavStyled>
           <Link to="/" end>Home</Link>
-          <Link to="/Movies">Movies</Link>
+          <Link to="/movies">Movies</Link>
         </NavStyled>
       </HeaderStyled>
        <Routes>
         {data !== null && <Route path="/" element={<Home data={data} />} />} 
-       <Route path="/Movies" element={<Movies/>} />
+        <Route path="/movies" element={<Movies/>} />
+        <Route path='/movies/:movieId' element ={<MovieDetails />} />
         </Routes>
        </div>
   );

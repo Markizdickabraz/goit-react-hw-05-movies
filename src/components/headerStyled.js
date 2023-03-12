@@ -12,10 +12,14 @@ padding-top:15px;
 
 export const Link = styled(NavLink)`
 text-decoration: none;
+color: black;
  :hover{
     color:lightblue;
  }
  :active{
-    color: lime;
+    color: blue;
  }
+ &.active {
+    color: brown;
+  }
 `
