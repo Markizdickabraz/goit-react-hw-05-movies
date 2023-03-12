@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const HomeStyled = styled.ul`
-padding: 15px;
+padding: 25px;
 display: flex;
 flex-wrap: wrap;
-gap:10px;
+gap:20px;
 list-style: none;
 `
 

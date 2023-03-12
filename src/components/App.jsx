@@ -1,10 +1,10 @@
-import Home from "./home/Home";
-import axios from "axios";
+import { Routes, Route} from "react-router-dom";
 import { useState, useEffect } from "react";
+import { HeaderStyled, Link, NavStyled } from "./headerStyled";
 import GlobalStyle from './globalStyled'
-import { HeaderStyled, LinkStyled, NavStyled } from "./headerStyled";
-
-
+import axios from "axios";
+import Home from "./home/Home";
+import Movies from "./movies/movies";
 
 export const App = () => {
 
@@ -16,7 +16,7 @@ const BASEURL = `https://api.themoviedb.org/3/trending/movie/day?`;
 
 
 const [data, setData] = useState(null)
-const [genres, setGenres] = useState(null)
+  const [genres, setGenres] = useState(null)
 
 console.log(data)  
 
@@ -51,11 +51,14 @@ useEffect(() => {
       <GlobalStyle />
       <HeaderStyled>
         <NavStyled>
-          <LinkStyled href="/">Home</LinkStyled>
-          <LinkStyled href="/Movies">Movies</LinkStyled>
+          <Link to="/" end>Home</Link>
+          <Link to="/Movies">Movies</Link>
         </NavStyled>
       </HeaderStyled>
-    {data !== null && <Home data={data} genres={genres}></Home>}
+       <Routes>
+        {data !== null && <Route path="/" element={<Home data={data} />} />} 
+       <Route path="/Movies" element={<Movies/>} />
+        </Routes>
        </div>
   );
 };

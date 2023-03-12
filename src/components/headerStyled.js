@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const HeaderStyled = styled.header`
 padding-left: 25px;
@@ -9,7 +10,7 @@ gap: 15px;
 padding-top:15px;
 `
 
-export const LinkStyled = styled.a`
+export const Link = styled(NavLink)`
 text-decoration: none;
  :hover{
     color:lightblue;
