@@ -16,7 +16,7 @@ const BASEURL = `https://api.themoviedb.org/3/trending/movie/day?`;
 
 
 const [data, setData] = useState(null)
-  const [genres, setGenres] = useState(null)
+  // const [genres, setGenres] = useState(null)
 
 console.log(data)  
 
@@ -29,19 +29,19 @@ async function fetchMovieRating() {
   }
 }
 
-async function fetchGenresId() {
-  const BASEURLGENRES = `https://api.themoviedb.org/3/genre/movie/list?`;
-  try {
-    const resultGenresId = await axios.get(`${BASEURLGENRES}api_key=${KEY}&language=en-US`);
-    setGenres(resultGenresId.data.genres)
-  } catch (error) {
-    console.log(error);
-  }
-}
+// async function fetchGenresId() {
+//   const BASEURLGENRES = `https://api.themoviedb.org/3/genre/movie/list?`;
+//   try {
+//     const resultGenresId = await axios.get(`${BASEURLGENRES}api_key=${KEY}&language=en-US`);
+//     setGenres(resultGenresId.data.genres)
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
 useEffect(() => {
   fetchMovieRating();
-  fetchGenresId();
+  // fetchGenresId();
 // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [])
 
