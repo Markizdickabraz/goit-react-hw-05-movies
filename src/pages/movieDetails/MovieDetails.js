@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Outlet } from "react-router-dom";
 import { CardImgStyled, CardStyled, GenreStyled, MainStyled } from "./movieDetailsStyled";
 
 const KEY = `faab19b092cac6c59a97dec233a38f4d`;
@@ -46,8 +46,9 @@ export function MovieDetails() {
             </CardStyled>
             <div>
                 <p>Additional information</p>
-                <Link to="/movies/:movieId/cast">Cast</Link>
-                <Link to="reviews">Reviews</Link>
+                <Link to={`/movies/${movieId}/cast`}>Cast</Link>
+                <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+                <Outlet />
             </div>
         </div>}
     </MainStyled>

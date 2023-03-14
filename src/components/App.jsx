@@ -6,8 +6,8 @@ import GlobalStyle from './globalStyled'
 import axios from "axios";
 import Home from "../pages/home/Home";
 import Movies from "../pages/movies/Movies";
-import Cast from "./cast/cast";
-import Reviews from "./reviews/reviews";
+import {Cast} from "./cast/cast";
+import {Reviews} from "./reviews/reviews";
 
 export const App = () => {
 
