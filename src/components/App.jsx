@@ -1,13 +1,8 @@
 import { Routes, Route} from "react-router-dom";
 import { useState, useEffect } from "react";
 import { HeaderStyled, Link, NavStyled } from "./headerStyled";
-// import MovieDetails from "../pages/movieDetails/MovieDetails";
 import GlobalStyle from './globalStyled'
 import axios from "axios";
-// import Home from "../pages/home/Home";
-// import Movies from "../pages/movies/Movies";
-// import Cast from "./cast/cast";
-// import Reviews from "./reviews/reviews";
 import { lazy,Suspense} from "react";
 
 const Home = lazy(() => import("../pages/home/Home"));
@@ -15,6 +10,7 @@ const Movies = lazy(() => import("../pages/movies/Movies"));
 const Cast = lazy(() => import("./cast/cast"));
 const Reviews = lazy(() => import("./reviews/reviews"))
 const MovieDetails = lazy(() => import("../pages/movieDetails/MovieDetails"))
+const NotFound = lazy(() => import("../pages/notFound/notFound"))
 
 export const App = () => {
 
@@ -50,7 +46,8 @@ useEffect(() => {
           <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<Home data={data} />} />
-        <Route path="/movies" element={<Movies/>} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="*" element={<NotFound />} /> 
         <Route path="/movies/:movieId" element={<MovieDetails />}>
           <Route path="/movies/:movieId/cast" element={<Cast />} />
           <Route path="/movies/:movieId/reviews" element={<Reviews />} />

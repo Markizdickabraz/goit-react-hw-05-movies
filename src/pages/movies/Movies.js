@@ -4,7 +4,6 @@ import GalleryItems from "components/Gallery";
 import { FormStyled } from "./moviesStyled"
 import { ListStyled } from "pages/home/homeStyled"
 
-
 export default function Movies() {
     
     const [name, setName] = useState('')
@@ -28,7 +27,6 @@ export default function Movies() {
   }
 }
     
-
         const formSubmit = e => {
      e.preventDefault();
         if (name.trim() === '') {
@@ -39,7 +37,6 @@ export default function Movies() {
          setName('')
      }
 
-    
     return (
         <main>
             <FormStyled onSubmit={formSubmit}>
