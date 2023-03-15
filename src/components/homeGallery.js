@@ -1,5 +1,5 @@
 // import MovieDetails from "components/movieDetails/MovieDetails"
-import { GalleryItemsStyled, ImgStyled, LinkStyled } from "./homeStyled"
+import { GalleryItemsStyled, ImgStyled, LinkStyled } from "../pages/home/homeStyled"
 
 
 export default function GalleryItems({ data }) {

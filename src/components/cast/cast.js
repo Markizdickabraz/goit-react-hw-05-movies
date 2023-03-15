@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export function Cast() {
+export default function Cast() {
     
     const KEY = `faab19b092cac6c59a97dec233a38f4d`;
 

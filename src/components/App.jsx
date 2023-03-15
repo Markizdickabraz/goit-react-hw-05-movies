@@ -1,13 +1,13 @@
 import { Routes, Route} from "react-router-dom";
 import { useState, useEffect } from "react";
 import { HeaderStyled, Link, NavStyled } from "./headerStyled";
-import {MovieDetails} from "../pages/movieDetails/MovieDetails";
+import MovieDetails from "../pages/movieDetails/MovieDetails";
 import GlobalStyle from './globalStyled'
 import axios from "axios";
 import Home from "../pages/home/Home";
 import Movies from "../pages/movies/Movies";
-import {Cast} from "./cast/cast";
-import {Reviews} from "./reviews/reviews";
+import Cast from "./cast/cast";
+import Reviews from "./reviews/reviews";
 
 export const App = () => {
 

@@ -1,14 +1,19 @@
 import axios from "axios";
+import BackLink from "components/BackLink";
 import { useEffect, useState } from "react";
-import { useParams, Link, Outlet } from "react-router-dom";
+import { useParams, Link, Outlet, useLocation } from "react-router-dom";
 import { CardImgStyled, CardStyled, GenreStyled, MainStyled } from "./movieDetailsStyled";
+
 
 const KEY = `faab19b092cac6c59a97dec233a38f4d`;
 
-export function MovieDetails() {
+export default function MovieDetails() {
 
     const { movieId } = useParams();
     const [movie, setMovie] = useState(null);
+      const location = useLocation();
+    const backLinkHref = location.state?.from ?? "/";
+
 
     async function fetchFullInfoMovie () {
         try {
@@ -26,6 +31,7 @@ export function MovieDetails() {
 
     return (<MainStyled>
         {movie !== null && <div>
+                <BackLink to={backLinkHref}>Back to Home</BackLink>
             <CardStyled>
                 <CardImgStyled src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.original_title}></CardImgStyled>
             <div>

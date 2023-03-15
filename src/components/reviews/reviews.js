@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 
-export function Reviews() {
+export default function Reviews() {
 
     const KEY = `faab19b092cac6c59a97dec233a38f4d`;
 
