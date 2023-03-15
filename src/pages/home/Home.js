@@ -1,10 +1,10 @@
-import GalleryItems from "../../components/homeGallery";
-import { HomeStyled } from "./homeStyled";
+import GalleryItems from "../../components/Gallery";
+import { ListStyled } from "./homeStyled";
 
 export default function Home({ data}) {
     return (
-        <HomeStyled>
-            <GalleryItems data= {data} />
-        </HomeStyled>
+        <ListStyled>
+            <GalleryItems data={data} />
+        </ListStyled>
     )
 }

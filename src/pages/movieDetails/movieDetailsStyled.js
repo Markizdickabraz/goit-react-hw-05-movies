@@ -14,3 +14,7 @@ export const GenreStyled = styled.p`
 display:flex;
 gap:10px;
 `
+export const CastAndReviewsComponentsDivStiled = styled.div`
+display:flex;
+gap:15px;
+`

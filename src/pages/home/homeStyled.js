@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {Link } from "react-router-dom";
 
 
-export const HomeStyled = styled.ul`
+export const ListStyled = styled.ul`
 padding: 25px;
 display: flex;
 flex-wrap: wrap;

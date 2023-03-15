@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { CastImgStyled,CastStyled} from "./castStyled";
 
 export default function Cast() {
     
@@ -26,11 +27,11 @@ export default function Cast() {
     
     return (
         cast.map(item => (
-            <div key={item.id}>
-                <img src={`https://image.tmdb.org/t/p/w500/${item.profile_path}`} alt={item.character}></img>
+            <CastStyled key={item.id}>
+                <CastImgStyled src={`https://image.tmdb.org/t/p/w500/${item.profile_path}`} alt={item.character}></CastImgStyled>
                 <p>{item.original_name}</p>
                 <p>Character: { item.character}</p>
-            </div>
+            </CastStyled>
        ))
     )
 }

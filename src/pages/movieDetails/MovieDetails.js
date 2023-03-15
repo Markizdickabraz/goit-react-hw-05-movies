@@ -2,8 +2,7 @@ import axios from "axios";
 import BackLink from "components/BackLink";
 import { useEffect, useState } from "react";
 import { useParams, Link, Outlet, useLocation } from "react-router-dom";
-import { CardImgStyled, CardStyled, GenreStyled, MainStyled } from "./movieDetailsStyled";
-
+import { CardImgStyled,CardStyled, CastAndReviewsComponentsDivStiled, GenreStyled, MainStyled } from "./movieDetailsStyled";
 
 const KEY = `faab19b092cac6c59a97dec233a38f4d`;
 
@@ -52,8 +51,10 @@ export default function MovieDetails() {
             </CardStyled>
             <div>
                 <p>Additional information</p>
+                <CastAndReviewsComponentsDivStiled>
                 <Link to={`/movies/${movieId}/cast`}>Cast</Link>
                 <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+                </CastAndReviewsComponentsDivStiled>
                 <Outlet />
             </div>
         </div>}

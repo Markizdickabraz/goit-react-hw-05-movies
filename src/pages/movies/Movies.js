@@ -1,7 +1,9 @@
-import axios from "axios"
-import { useState } from "react"
-import GalleryItems from "components/homeGallery"
+import axios from "axios";
+import { useState } from "react";
+import GalleryItems from "components/Gallery";
 import { FormStyled } from "./moviesStyled"
+import { ListStyled } from "pages/home/homeStyled"
+
 
 export default function Movies() {
     
@@ -51,9 +53,9 @@ export default function Movies() {
         </label>
             <button type="onSubmit">Search</button>
             </FormStyled>
-            <ul>
+            <ListStyled>
             <GalleryItems data= {data} />
-            </ul>
+            </ListStyled>
        </main>
    )
 }
