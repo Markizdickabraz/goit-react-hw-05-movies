@@ -14,7 +14,6 @@ export default function Cast() {
         try {
     const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${KEY}`)
             setCast(response.data.cast)
-            console.log(response.data.cast)
         } catch (error) {
     console.log(error);
         }

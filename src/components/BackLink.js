@@ -1,6 +1,8 @@
 import { HiArrowLeft } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 import styled from "styled-components";
+
 
 
 const StyledLink = styled(Link)`
@@ -28,3 +30,8 @@ const BackLink = ({ to, children }) => {
 };
 
 export default BackLink;
+
+BackLink.propTypes = {
+  to: PropTypes.string,
+  children:PropTypes.string
+}

@@ -20,7 +20,7 @@ export default function Reviews() {
     }
          
     useEffect(() => {
-            fetchFilmReview();
+        fetchFilmReview();
          // eslint-disable-next-line react-hooks/exhaustive-deps
          },[movieId])
 

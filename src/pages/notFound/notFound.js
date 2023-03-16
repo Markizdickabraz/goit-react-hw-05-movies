@@ -1,11 +1,12 @@
 import BackLink from "components/BackLink"
+import { NotFoundPage, NotFoundTitle } from "./notFoundStyled"
 
 export default function NotFound() {
     return (
-        <div>
+        <NotFoundPage>
             <BackLink to={"/"}>Back to Home</BackLink>
-            <h1>Такої сторінки не існує</h1>
-        </div>
+            <NotFoundTitle>Такої сторінки не існує</NotFoundTitle>
+        </NotFoundPage>
 
     )
 }

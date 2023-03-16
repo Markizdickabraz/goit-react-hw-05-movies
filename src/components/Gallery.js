@@ -1,5 +1,7 @@
 import { ImgStyled, LinkStyled } from "../pages/home/homeStyled"
 import { GalleryItemsStyled } from "../pages/home/homeStyled"
+import PropTypes from 'prop-types';
+
 
 export default function GalleryItems({ data }) {
     return (
@@ -13,4 +15,8 @@ export default function GalleryItems({ data }) {
                 </GalleryItemsStyled>
             ))
    ) 
+}
+
+GalleryItems.propTypes = {
+    data: PropTypes.array
 }
