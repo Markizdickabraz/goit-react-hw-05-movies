@@ -50,6 +50,7 @@ export default function Movies() {
       return;
     }
     fetchMovieSearchByName(productName)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   
   useEffect(() => {
