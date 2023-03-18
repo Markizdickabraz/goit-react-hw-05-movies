@@ -8,13 +8,14 @@ import SearchBox from "components/searchBox";
 
 export default function Movies() {
     
-    // const [name, setName] = useState('')
+    const [name, setName] = useState('')
     const [data, setData] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
     const productName = searchParams.get("name") ?? "";
     
     const handleChacge = e => {
       // setName(e.currentTarget.value)
+      setName(e.currentTarget.value)
       updateQueryString(e.currentTarget.value)
     }
   
@@ -42,8 +43,8 @@ export default function Movies() {
       return;
       }
       
-      fetchMovieSearchByName(productName)
-    
+    fetchMovieSearchByName(productName);
+    setName('');
 }
   
   useEffect(() => {
@@ -62,7 +63,7 @@ export default function Movies() {
   
     return (
         <main>
-          <SearchBox value={productName} onChange={handleChacge} formSubmit ={formSubmit} />
+          <SearchBox value={name} onChange={handleChacge} formSubmit ={formSubmit} />
             <ListStyled>
             <GalleryItems data= {data} />
             </ListStyled>
