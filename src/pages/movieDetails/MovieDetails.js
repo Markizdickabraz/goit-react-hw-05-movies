@@ -10,13 +10,13 @@ export default function MovieDetails() {
 
     const { movieId } = useParams();
     const [movie, setMovie] = useState(null);
-      const location = useLocation();
+    const location = useLocation();
     const backLinkHref = location.state?.from ?? "/";
 
 
     async function fetchFullInfoMovie () {
         try {
-    const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${KEY}`)
+            const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${KEY}`)
             setMovie(response.data)
         } catch (error) {
     console.log(error);
@@ -30,7 +30,7 @@ export default function MovieDetails() {
 
     return (<MainStyled>
         {movie !== null && <div>
-                <BackLink to={backLinkHref}>Back to Home</BackLink>
+                <BackLink to={backLinkHref}>Go back</BackLink>
             <CardStyled>
                 <CardImgStyled src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.original_title}></CardImgStyled>
             <div>
